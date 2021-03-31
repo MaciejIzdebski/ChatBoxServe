@@ -4,16 +4,15 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-
     <persistence-unit name="MessageDatabaseJPA" >
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>pl.chatboxserver.model.Message</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/chatbox"/>
-            <property name="javax.persistence.jdbc.user" value="chatbox"/>
-            <property name="javax.persistence.jdbc.password" value="chatbox"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/chatboxdatabase;AUTO_SERVER=true;AUTO_SERVER_PORT=9090"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
     </persistence-unit>
@@ -22,11 +21,11 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>pl.chatboxserver.model.User</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/chatbox"/>
-            <property name="javax.persistence.jdbc.user" value="chatbox"/>
-            <property name="javax.persistence.jdbc.password" value="chatbox"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/chatboxdatabase;AUTO_SERVER=true;AUTO_SERVER_PORT=9090"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
     </persistence-unit>
